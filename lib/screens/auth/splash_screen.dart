@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
         )),
         const SizedBox(height: 18),
         Text(
-          "Trouvez votre vélo idéal et découvrez la plus grande collection de pistes cyclables au monde.",
+          "Find your ideal bike and have fun riding it!",
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Theme.of(context).hintColor,

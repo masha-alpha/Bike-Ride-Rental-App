@@ -103,7 +103,7 @@ class _StationScreenState extends State<StationScreen> {
                   const SizedBox(height: 10),
                   const Center(
                       child: Text(
-                          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression"
+                          "Lorem Ipsum is simply fake text used in typesetting and layout before printing"
                           // style: TextStyle(color: Theme.of(context).primaryColor)
 
                           )),
@@ -122,7 +122,7 @@ class _StationScreenState extends State<StationScreen> {
                           // nextScreen(context, null);
                         },
                         child: const Text(
-                          "LOUER",
+                          "HIRE",
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
                         )),

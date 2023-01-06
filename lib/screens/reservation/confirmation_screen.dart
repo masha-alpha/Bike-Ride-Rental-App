@@ -10,7 +10,7 @@ class ConfirmationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: app_bar(context, "Réservation Complète"),
+      appBar: app_bar(context, "Reservation complete"),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
@@ -18,7 +18,7 @@ class ConfirmationScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text(
-              "Votre réservation est complète. Vous pouvez maintenant récupérer votre vélo",
+              "Your reservation is complete. You can now collect your bike",
               textAlign: TextAlign.center,
             ),
             const SizedBox(
@@ -33,7 +33,7 @@ class ConfirmationScreen extends StatelessWidget {
                   nextScreen(context, const HomeScreen());
                 },
                 child: const Text(
-                  "Retourner à la page d'acceuil",
+                  "Return to home page",
                   style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                 )),
           ],

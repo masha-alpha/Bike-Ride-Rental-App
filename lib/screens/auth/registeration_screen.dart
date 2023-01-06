@@ -45,10 +45,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         validator: (value) {
           RegExp regex = RegExp(r'^.{3,}$');
           if (value!.isEmpty) {
-            return ("Veuillez saisir votre Nom ");
+            return ("Please enter your Name ");
           }
           if (!regex.hasMatch(value)) {
-            return ("Veuillez saisir un Nom valide (Min. 3 caractères) ");
+            return ("Please enter a valid Name (Min of 3 caractères) ");
           }
           return null;
         },
@@ -99,11 +99,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         keyboardType: TextInputType.emailAddress,
         validator: (value) {
           if (value!.isEmpty) {
-            return ("Veuillez saisir votre e-mail !");
+            return ("Please enter your email!");
           }
           if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
               .hasMatch(value)) {
-            return ("Veuillez saisir un email valide ! ");
+            return ("Please enter a valid email ! ");
           }
           return null;
         },
@@ -128,10 +128,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         validator: (value) {
           RegExp regex = RegExp(r'^.{6,}$');
           if (value!.isEmpty) {
-            return ("Mot de passe est obligatoire !");
+            return ("Password is required !");
           }
           if (!regex.hasMatch(value)) {
-            return ("Veuillez saisir un mot de passe valide (Min. 6 caractères) ");
+            return ("Please enter a valid password (Min. 6 characters) ");
           }
         },
         onSaved: (value) {
@@ -149,7 +149,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             child: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
           ),
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Mot de passe",
+          hintText: "Password",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
@@ -163,7 +163,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         validator: (value) {
           if (confirmPasswordEditingController.text !=
               passwordEditingController.text) {
-            return "Ces mots de passe ne correspondent pas. Veuillez réessayer.";
+            return "These passwords do not match. Try Again.";
           }
           return null;
         },
@@ -182,7 +182,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             child: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
           ),
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Confirmer le mot de passe",
+          hintText: "Confirm password",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
@@ -202,7 +202,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             //emailEditingController.text, passwordEditingController.text);
           },
           child: const Text(
-            "S'enregistrer",
+            "Register",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
@@ -210,7 +210,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
 
     return Scaffold(
-      appBar: app_bar(context, "S'inscrire"),
+      appBar: app_bar(context, "Registration"),
       body: Center(
         child: SingleChildScrollView(
           child: Container(
@@ -246,13 +246,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          const Text("Vous avez déjà un compte? "),
+                          const Text("Already have an account? "),
                           GestureDetector(
                             onTap: () {
                               nextScreen(context, const LoginScreen());
                             },
                             child: const Text(
-                              "Se connecter",
+                              "Login",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 15),
                             ),
@@ -288,7 +288,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           (await FirebaseAuth.instance.signInWithCredential(authCredential))
               .user!;
       // save the values
-      sp.signUpUser(user, email, nameEditingController.text,"");
+      sp.signUpUser(user, email, nameEditingController.text, "");
       sp.checkUserExists().then((value) async {
         if (value == true) {
           // user exists
@@ -332,7 +332,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         .collection("users")
         .doc(user.uid)
         .set(userModel.toMap());
-    Fluttertoast.showToast(msg: "Compte créé avec succès. :) ");
+    Fluttertoast.showToast(msg: "Account created successfully. :) ");
 
     // Navigator.pushAndRemoveUntil(
     //     (context),

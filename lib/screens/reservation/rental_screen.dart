@@ -29,7 +29,7 @@ class _RentalScreenState extends State<RentalScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: app_bar(context, "Confirmer votre réservation"),
+      appBar: app_bar(context, "Confirm your booking"),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
@@ -43,7 +43,7 @@ class _RentalScreenState extends State<RentalScreen> {
                     borderRadius: BorderRadius.circular(35),
                     image: DecorationImage(
                         fit: BoxFit.contain,
-                        image: NetworkImage(widget.bike.image!))),
+                        image: AssetImage(widget.bike.image!))),
               ),
             ),
             Row(
@@ -164,7 +164,7 @@ class _RentalScreenState extends State<RentalScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  "Durée estimée",
+                  "Estimated duration",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
@@ -188,7 +188,7 @@ class _RentalScreenState extends State<RentalScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  "Prix",
+                  "Price",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 Container(
@@ -242,15 +242,15 @@ class _RentalScreenState extends State<RentalScreen> {
                           });
                           nextScreen(context, const ConfirmationScreen());
                         } else {
-                          openSnackbar(context,
-                              "Veuillez saisir votre destination", Colors.red);
+                          openSnackbar(context, "Please enter your destination",
+                              Colors.red);
                           setState(() {
                             reserve = false;
                           });
                         }
                       },
                       child: const Text(
-                        "Réserver",
+                        "Book",
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),

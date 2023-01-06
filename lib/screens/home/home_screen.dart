@@ -219,10 +219,10 @@ class _HomeScreenState extends State<HomeScreen> {
           currentIndex: curIndex,
           elevation: 0,
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.favorite), label: 'Favoris'),
-            BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Carte'),
+                icon: Icon(Icons.favorite), label: 'Favorite'),
+            BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Cart'),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
           ]),
     );

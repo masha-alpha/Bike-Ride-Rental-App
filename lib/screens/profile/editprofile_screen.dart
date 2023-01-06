@@ -70,10 +70,10 @@ class _EditProfileState extends State<EditProfile> {
         validator: (value) {
           RegExp regex = RegExp(r'^.{3,}$');
           if (value!.isEmpty) {
-            return ("Veuillez saisir votre Nom ");
+            return ("Please enter your Name ");
           }
           if (!regex.hasMatch(value)) {
-            return ("Veuillez saisir un Nom valide (Min. 3 caractères) ");
+            return ("Please enter a valid Name (Min of 3 characters) ");
           }
           return null;
         },
@@ -85,7 +85,7 @@ class _EditProfileState extends State<EditProfile> {
           // prefixIcon: Icon(Icons.account_circle),
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           // hintText: "Nom",
-          labelText: 'Nom',
+          labelText: 'Name',
 
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -100,11 +100,11 @@ class _EditProfileState extends State<EditProfile> {
         keyboardType: TextInputType.emailAddress,
         validator: (value) {
           if (value!.isEmpty) {
-            return ("Veuillez saisir votre e-mail !");
+            return ("Please enter your email !");
           }
           if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
               .hasMatch(value)) {
-            return ("Veuillez saisir un email valide ! ");
+            return ("Please enter a valid email ! ");
           }
           return null;
         },
@@ -155,7 +155,7 @@ class _EditProfileState extends State<EditProfile> {
             child: const Icon(Icons.calendar_month),
           ),
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          labelText: 'Date de naissance',
+          labelText: 'Date of birth',
           // labelStyle: TextStyle(color: Theme.of(context).iconTheme.color),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -185,7 +185,7 @@ class _EditProfileState extends State<EditProfile> {
             user = _auth.currentUser!;
             Navigator.of(context).pop();
 
-            openSnackbar(context, "Profil mis à jour!", Colors.white);
+            openSnackbar(context, "Profile updated!", Colors.white);
             // await sp.saveDataToFirestore().then((value) => sp
             //     .saveDataToSharedPreferences()
             //     .then((value) => sp.setSignIn().then((value) {
@@ -193,7 +193,7 @@ class _EditProfileState extends State<EditProfile> {
             // })));
           },
           child: Text(
-            "Enregistrer",
+            "Register",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 20,
@@ -232,7 +232,7 @@ class _EditProfileState extends State<EditProfile> {
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: app_bar(context, "Modifier mon profil"),
+      appBar: app_bar(context, "Edit my profile"),
       body: _isLoading
           ? const CircularProgressIndicator()
           : Center(

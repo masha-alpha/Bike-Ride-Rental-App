@@ -81,51 +81,51 @@ class _ProfilescreenState extends State<Profilescreen> {
             Text("${sp.email}"),
             const SizedBox(height: 20),
             ProfileMenu(
-              text: "Mon profil",
+              text: "My Profile",
               icon: const Icon(Icons.person),
               press: () {
                 nextScreen(context, const EditProfile());
               },
             ),
             ProfileMenu(
-              text: "Paramètres",
+              text: "Settings",
               icon: const Icon(Icons.settings),
               press: () {
                 nextScreen(context, ParametresScreen());
               },
             ),
             ProfileMenu(
-              text: "Centre d'aide",
+              text: "Help Center",
               icon: const Icon(Icons.help),
               press: () {},
             ),
             ProfileMenu(
-              text: "Visite guidée",
+              text: "Guided tour",
               icon: const Icon(Icons.auto_stories),
               press: () {
                 nextScreen(context, const TutorialScreen());
               },
             ),
             ProfileMenu(
-              text: "Partager l'application avec mes amis",
+              text: "Share app with my friends",
               icon: const Icon(Icons.share),
               press: () {
                 nextScreen(context, const AddBikeScreen());
               },
             ),
             ProfileMenu(
-              text: "À propos de votre application",
+              text: "About your app",
               icon: const Icon(Icons.perm_device_info),
               press: () {
                 nextScreen(context, const AddStationScreen());
               },
             ),
             ProfileMenu(
-              text: "Se déconnecter",
+              text: "Sign out",
               icon: const Icon(Icons.exit_to_app),
               press: () async {
                 final action = await AlertDialogs.yesCancelDialog(
-                    context, 'Se déconnecter', 'Êtes vous sûr ?');
+                    context, 'Sign out', 'Are you sure ?');
                 if (action == DialogsAction.oui) {
                   sp.userSignOut();
                   nextScreenReplace(context, const LoginScreen());

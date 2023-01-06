@@ -61,8 +61,7 @@ class CardWidget extends StatelessWidget {
                                       topRight: Radius.circular(30)),
                                   image: DecorationImage(
                                       fit: BoxFit.fitWidth,
-                                      image:
-                                          NetworkImage(bikes[index]['image'])),
+                                      image: AssetImage(bikes[index]['image'])),
 
                                   // child: Image.network(
                                   //   bikes[index]['image'],

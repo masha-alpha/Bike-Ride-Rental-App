@@ -75,14 +75,14 @@ class _VerifyScreenState extends State<VerifyScreen> {
       return const HomeScreen();
     } else {
       return Scaffold(
-        appBar: app_bar(context, "Vérifiez votre email !"),
+        appBar: app_bar(context, "Verify you email !"),
         body: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Un email de vérification a été envoyé à ${user!.email}",
+                "A verification email has been sent to ${user!.email}",
                 style: const TextStyle(fontSize: 18),
                 textAlign: TextAlign.center,
               ),
@@ -96,7 +96,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                     size: 32,
                   ),
                   label: const Text(
-                    "Renvoyer l'email",
+                    "Resend email",
                     style: TextStyle(fontSize: 22),
                   ),
                   onPressed: canResendEmail ? sendVerificationEmail : null),
@@ -106,7 +106,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                   minimumSize: const Size.fromHeight(50),
                 ),
                 child: const Text(
-                  "J'ai vérifié mon email",
+                  "I have verified my email",
                   style: TextStyle(fontSize: 22),
                 ),
                 onPressed: () {
@@ -120,7 +120,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                   minimumSize: const Size.fromHeight(50),
                 ),
                 child: const Text(
-                  "Annuler",
+                  "Cancel",
                   style: TextStyle(fontSize: 22),
                 ),
                 onPressed: () {

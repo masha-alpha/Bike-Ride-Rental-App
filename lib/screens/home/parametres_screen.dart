@@ -15,7 +15,7 @@ class _ParametresScreenState extends State<ParametresScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: app_bar(context, "Paramètres"),
+      appBar: app_bar(context, "Settings"),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         child: ListView(
@@ -29,7 +29,7 @@ class _ParametresScreenState extends State<ParametresScreen> {
                   width: 8,
                 ),
                 Text(
-                  "Compte",
+                  "Account",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -41,11 +41,11 @@ class _ParametresScreenState extends State<ParametresScreen> {
             const SizedBox(
               height: 10,
             ),
-            buildAccountOptionRow(context, "Mes informations", null),
+            buildAccountOptionRow(context, "My information", null),
             buildAccountOptionRow(
                 context, "Mot de passe", const ChangePasswordScreen()),
             buildAccountOptionRow(context, "Notifications", null),
-            buildAccountOptionRow(context, "Langue", null),
+            buildAccountOptionRow(context, "Language", null),
             const SizedBox(
               height: 40,
             ),
@@ -62,7 +62,7 @@ class _ParametresScreenState extends State<ParametresScreen> {
                   width: 8,
                 ),
                 const Text(
-                  "Apparence",
+                  "Appearance",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -78,7 +78,7 @@ class _ParametresScreenState extends State<ParametresScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  "Mode sombre",
+                  "Dark Mode",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
@@ -113,23 +113,22 @@ class _ParametresScreenState extends State<ParametresScreen> {
               height: 10,
             ),
             // buildNotificationOptionRow("New for you", true),
-            buildAccountOptionRow(context, "J'ai besoin d'aide", null),
-            buildAccountOptionRow(
-                context, "J'ai une question de confidentialité", null),
+            buildAccountOptionRow(context, "I need help", null),
+            buildAccountOptionRow(context, "I have a privacy question", null),
             const SizedBox(
               height: 50,
             ),
             Column(
               children: const [
                 Text(
-                  "Bike App v1.3.5",
+                  "Bike App v1.0",
                   style: TextStyle(
                     fontSize: 10,
                     // color: Colors.grey[600]
                   ),
                 ),
                 Text(
-                  "Made in Casablanca",
+                  "Made in Kenya",
                   style: TextStyle(
                     fontSize: 10,
                     //color: Colors.grey[600]

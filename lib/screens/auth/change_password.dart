@@ -23,7 +23,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   changePassword(String np) async {
     try {
       await user!.updatePassword(np);
-      openSnackbar(context, "Mot de passe mis à jour", Colors.white);
+      openSnackbar(context, "Password updated", Colors.white);
     } catch (error) {
       openSnackbar(context, error.toString(), Colors.white54);
     }
@@ -39,10 +39,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         validator: (value) {
           RegExp regex = RegExp(r'^.{6,}$');
           if (value!.isEmpty) {
-            return ("Mot de passe est obligatoire !");
+            return ("Password is required !");
           }
           if (!regex.hasMatch(value)) {
-            return ("Veuillez saisir un mot de passe valide (Min. 6 caractères) ");
+            return ("Please enter a valid password (Min. 6 characters) ");
           }
         },
         onSaved: (value) {
@@ -60,7 +60,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             child: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
           ),
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Nouveau mot de passe",
+          hintText: "New Password",
           hintStyle: const TextStyle(fontSize: 14),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -75,7 +75,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         validator: (value) {
           if (confirmPasswordEditingController.text !=
               passwordEditingController.text) {
-            return "Ces mots de passe ne correspondent pas. Veuillez réessayer.";
+            return "These passwords do not match. Try Again.";
           }
           return null;
         },
@@ -94,7 +94,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             child: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
           ),
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Confirmer le mot de passe",
+          hintText: "Confirm password",
           hintStyle: const TextStyle(fontSize: 14),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -112,14 +112,14 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             Navigator.of(context).pop();
           },
           child: const Text(
-            "Mettre à jour",
+            "To update",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
           )),
     );
     return Scaffold(
-      appBar: app_bar(context, "Changer le mot de passe"),
+      appBar: app_bar(context, "Change password"),
       body: Padding(
         padding: const EdgeInsets.all(32),
         child: Form(
@@ -143,15 +143,13 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   onPressed: () {
                     if (_formkey.currentState!.validate()) {
                       changePassword(passwordEditingController.text);
-                      openSnackbar(
-                          context,
-                          "Mot de passe mis à jour avec succès !",
+                      openSnackbar(context, "Password updated successfully !",
                           Colors.white);
                       Navigator.of(context).pop();
                     }
                   },
                   child: const Text(
-                    "Mettre à jour",
+                    "To update",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 20,

@@ -78,12 +78,12 @@ class _NavBarState extends State<NavBar> {
           ),
           ListTile(
             leading: const Icon(Icons.favorite),
-            title: const Text('Favoris'),
+            title: const Text('Favorites'),
             onTap: () => null,
           ),
           ListTile(
             leading: const Icon(Icons.person),
-            title: const Text('Amis'),
+            title: const Text('Friends'),
             onTap: () {},
           ),
           ListTile(
@@ -115,7 +115,7 @@ class _NavBarState extends State<NavBar> {
           const Divider(),
           ListTile(
             leading: const Icon(Icons.settings),
-            title: const Text('Paramètres'),
+            title: const Text('Settings'),
             onTap: () => nextScreen(context, ParametresScreen()),
           ),
           ListTile(
@@ -125,11 +125,11 @@ class _NavBarState extends State<NavBar> {
           ),
           const Divider(),
           ListTile(
-              title: const Text('Se déconnecter'),
+              title: const Text('Log out'),
               leading: const Icon(Icons.exit_to_app),
               onTap: () async {
                 final action = await AlertDialogs.yesCancelDialog(
-                    context, 'Se déconnecter', 'Êtes vous sûr ?');
+                    context, 'Log out', 'Are you sure ?');
                 if (action == DialogsAction.oui) {
                   sp.userSignOut();
                   nextScreenReplace(context, const LoginScreen());

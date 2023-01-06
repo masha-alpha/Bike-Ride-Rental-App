@@ -34,50 +34,46 @@ class _MapScreenState extends State<MapScreen> {
     //       return const Text("Something was wrong");
     //     } else if (snapshot.hasData) {
     //       List stations = snapshot.data as List<Map<String, dynamic>>;
-    //       return 
-          Marker firstMarker = Marker(
-            markerId: const MarkerId('Station Maarif'),
-            position: const LatLng(33.56806300637081, -7.628466552353953),
-            infoWindow: const InfoWindow(title: 'Station Maarif'),
-            icon: BitmapDescriptor.defaultMarkerWithHue(
-                BitmapDescriptor.hueAzure),
-          );
-          Marker secondMarker = Marker(
-            markerId: const MarkerId('Station Mosquée Hassan-II'),
-            position: const LatLng(33.60950735526005, -7.633051170093907),
-            infoWindow: const InfoWindow(title: 'Station Mosquée Hassan-II'),
-            icon: BitmapDescriptor.defaultMarkerWithHue(
-                BitmapDescriptor.hueAzure),
-          );
-          Marker thirdMarker = Marker(
-            markerId: const MarkerId('Station Place des Nations Unies'),
-            position: const LatLng(33.595194912570044, -7.618696588039488),
-            infoWindow:
-                const InfoWindow(title: 'Station Place des Nations Unies'),
-            icon: BitmapDescriptor.defaultMarkerWithHue(
-                BitmapDescriptor.hueAzure),
-            // onTap: () => nextScreen(context,
-                // StationScreen(station: Station.fromMap(stations[index]))),
-          );
-          Marker forthMarker = Marker(
-            markerId: const MarkerId('Station Morocco Mall'),
-            position: const LatLng(33.57691956355926, -7.707088013896289),
-            infoWindow: const InfoWindow(title: 'Station Morocco Mall'),
-            icon: BitmapDescriptor.defaultMarkerWithHue(
-                BitmapDescriptor.hueAzure),
-          );
-          Marker fifthMarker = Marker(
-            markerId: const MarkerId('Station Anfa Place'),
-            position: const LatLng(33.599192545109936, -7.664233691337921),
-            infoWindow: const InfoWindow(title: 'Station Anfa Place'),
-            icon: BitmapDescriptor.defaultMarkerWithHue(
-                BitmapDescriptor.hueAzure),
-          );
-          markers.add(firstMarker);
-          markers.add(secondMarker);
-          markers.add(thirdMarker);
-          markers.add(forthMarker);
-          markers.add(fifthMarker);
+    //       return -1.1049261389042577, 37.013886257444845
+    //       -1.1039714469037558, 37.01767351172671
+    //       -1.106191902855416, 37.0151951505679
+    Marker firstMarker = Marker(
+      markerId: const MarkerId('Juja Square'),
+      position: const LatLng(-1.1049261389042577, 37.013886257444845),
+      infoWindow: const InfoWindow(title: 'Juja Square'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+    );
+    Marker secondMarker = Marker(
+      markerId: const MarkerId('Juja Police Station'),
+      position: const LatLng(-1.1039714469037558, 37.01767351172671),
+      infoWindow: const InfoWindow(title: 'Juja Police Station'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+    );
+    Marker thirdMarker = Marker(
+      markerId: const MarkerId('Equity Bank - Juja'),
+      position: const LatLng(-1.106191902855416, 37.0151951505679),
+      infoWindow: const InfoWindow(title: 'Equity Bank - Juja'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+      // onTap: () => nextScreen(context, -1.107060776512933, 37.01462652223737
+      // StationScreen(station: Station.fromMap(stations[index]))),
+    );
+    Marker forthMarker = Marker(
+      markerId: const MarkerId('Juja Ecomatt Supermarket'),
+      position: const LatLng(-1.107060776512933, 37.01462652223737),
+      infoWindow: const InfoWindow(title: 'Juja Ecomatt Supermarket'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+    ); //-1.1058164635776282, 37.01606418627528
+    Marker fifthMarker = Marker(
+      markerId: const MarkerId('Senate Hotel'),
+      position: const LatLng(-1.1058164635776282, 37.01606418627528),
+      infoWindow: const InfoWindow(title: 'Senate Hotel'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+    );
+    markers.add(firstMarker);
+    markers.add(secondMarker);
+    markers.add(thirdMarker);
+    markers.add(forthMarker);
+    markers.add(fifthMarker);
     //     }
     //   },
     // );
@@ -85,8 +81,9 @@ class _MapScreenState extends State<MapScreen> {
     setState(() {});
   }
 
+// -1.0909718344932822, 37.01169543886637
   static const _initialCameraPosition = CameraPosition(
-    target: LatLng(33.53985139628253, -7.658792714030167),
+    target: LatLng(-1.0909718344932822, 37.01169543886637),
     zoom: 11.5,
   );
 

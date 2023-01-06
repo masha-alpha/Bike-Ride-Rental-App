@@ -35,7 +35,7 @@ class _AccueilScreenState extends State<AccueilScreen>
             const Padding(
               padding: EdgeInsets.fromLTRB(10, 10, 10, 4),
               child: Text(
-                "Choisir votre vélo",
+                "Choose your bike",
                 style: TextStyle(
                   color: kTextColor,
                   fontWeight: FontWeight.w700,
@@ -63,16 +63,15 @@ class _AccueilScreenState extends State<AccueilScreen>
               controller: _tabController,
               tabs: const [
                 Text(
-                  'Tous',
+                  'All',
                   style: TextStyle(fontFamily: 'Varela_Round'),
                 ),
                 Text(
-                  'Favoris',
+                  'Favorites',
                   style: TextStyle(fontFamily: 'Varela_Round'),
                 ),
-                Text('Classique', style: TextStyle(fontFamily: 'Varela_Round')),
-                Text('Électrique',
-                    style: TextStyle(fontFamily: 'Varela_Round')),
+                Text('Classic', style: TextStyle(fontFamily: 'Varela_Round')),
+                Text('Électric', style: TextStyle(fontFamily: 'Varela_Round')),
               ],
             ),
           ],
@@ -153,13 +152,13 @@ Stream<List<Map<String, dynamic>>> readAllBikes() => FirebaseFirestore.instance
 Stream<List<Map<String, dynamic>>> readElectricBikes() =>
     FirebaseFirestore.instance
         .collection('bikes')
-        .where("type", isEqualTo: "électrique")
+        .where("type", isEqualTo: "electric")
         .snapshots()
         .map((snapshot) => snapshot.docs.map((doc) => doc.data()).toList());
 
 Stream<List<Map<String, dynamic>>> readClassicBikes() =>
     FirebaseFirestore.instance
         .collection('bikes')
-        .where("type", isEqualTo: "classique")
+        .where("type", isEqualTo: "classic")
         .snapshots()
         .map((snapshot) => snapshot.docs.map((doc) => doc.data()).toList());

@@ -78,7 +78,7 @@ List<BikeModel> bikes = [
       type: "Classique",
       speed: 40,
       description: dummyText,
-      image: "assets/bikeAppLogo.png",
+      image: "",
       rating: 4.5),
   BikeModel(
       bid: "4",

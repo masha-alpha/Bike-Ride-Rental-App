@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
 import 'package:provider/provider.dart';
+import 'package:bikeapp_v0/provider/google_sign_in.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -41,6 +42,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  final GoogleSignInProvider googleSignIn = GoogleSignInProvider();
+
   //firebase
   final _auth = FirebaseAuth.instance;
 
@@ -56,11 +59,11 @@ class _LoginScreenState extends State<LoginScreen> {
         keyboardType: TextInputType.emailAddress,
         validator: (value) {
           if (value!.isEmpty) {
-            return ("Veuillez saisir votre e-mail !");
+            return ("Please enter your email !");
           }
           if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
               .hasMatch(value)) {
-            return ("Veuillez saisir un email valide ! ");
+            return ("Please enter a valid email ! ");
           }
           return null;
         },
@@ -85,10 +88,10 @@ class _LoginScreenState extends State<LoginScreen> {
         validator: (value) {
           RegExp regex = RegExp(r'^.{6,}$');
           if (value!.isEmpty) {
-            return ("Mot de passe est obligatoire !");
+            return ("Password is required !");
           }
           if (!regex.hasMatch(value)) {
-            return ("Veuillez saisir un mot de passe valide (Min. 6 caractères) ");
+            return ("Please enter a valid password (Minimum of 6 characters) ");
           }
         },
         onSaved: (value) {
@@ -107,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
             ),
             contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-            hintText: "Mot de passe",
+            hintText: "Password",
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             )));
@@ -123,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
             handleEmailSignIn(emailController.text, passwordController.text);
           },
           child: const Text(
-            "Se connecter",
+            "Login",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
@@ -164,27 +167,27 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {
                         nextScreen(context, const ForgotPasswordScreen());
                       },
-                      child: const Text("Mot de passe oublié ?")),
+                      child: const Text("Forgot password ?")),
                   const SizedBox(height: 5),
                   loginButton,
                   const SizedBox(height: 15),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        const Text("Vous n'avez pas de compte? "),
+                        const Text("You do not have an account? "),
                         GestureDetector(
                           onTap: () {
                             nextScreen(context, const RegistrationScreen());
                           },
                           child: const Text(
-                            "S'enregistrer",
+                            "Register",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 15),
                           ),
                         )
                       ]),
                   const SizedBox(height: 15),
-                  const Text("OU",
+                  const Text("OR",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 15,
@@ -223,7 +226,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               SizedBox(
                                 width: 15,
                               ),
-                              Text("Continuer avec Google",
+                              Text("Continue with Google",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 15,
@@ -256,7 +259,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               SizedBox(
                                 width: 15,
                               ),
-                              Text("Continuer avec Facebook",
+                              Text("Continue with Facebook",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 15,
@@ -290,7 +293,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               SizedBox(
                                 width: 15,
                               ),
-                              Text("Continuer avec Phone",
+                              Text("Continue with Phone",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 15,

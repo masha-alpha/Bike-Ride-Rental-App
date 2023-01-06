@@ -21,7 +21,7 @@ class _BikeDetailsScreenState extends State<BikeDetailsScreen> {
         Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark;
 
     return Scaffold(
-        appBar: app_bar(context, "Détails vélo ${widget.bike.type}"),
+        appBar: app_bar(context, "Bike details ${widget.bike.type}"),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 32, 20, 20),
           child: Stack(children: [
@@ -45,7 +45,7 @@ class _BikeDetailsScreenState extends State<BikeDetailsScreen> {
                           // Container(
                           //   height: 230,
                           //   child:
-                          Image.network(widget.bike.image!),
+                          Image.asset(widget.bike.image!),
                     ),
                     // Image.asset(
                     //   Config.app_icon,
@@ -96,7 +96,7 @@ class _BikeDetailsScreenState extends State<BikeDetailsScreen> {
                                 ));
                           },
                           child: const Text(
-                            "LOUER",
+                            "Rent",
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           )),

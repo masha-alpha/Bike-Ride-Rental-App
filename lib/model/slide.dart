@@ -16,8 +16,7 @@ final slideList = [
   Slide(
     imageUrl: Config.app_icon,
     title: 'Limiter le Danger',
-    description:
-        'Notre but est de limiter le danger des fuites de gaz dans les domiciles',
+    description: 'Our goal is to limit the danger of gas leaks in homes',
   ),
   Slide(
     imageUrl: Config.app_icon,
